@@ -1,0 +1,1796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Nova Trails</title>
+    <meta name="description" content="Privacy Policy for Nova Trails - Learn how we protect and handle your personal information">
+    <meta name="author" content="Nova Trails">
+    <link rel="icon" type="image/png" href="images/logo.jpg">  
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Enhanced Image Quality CSS */
+        img {
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+            image-rendering: optimize-quality;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+        }
+
+        /* Enhanced background image quality */
+        .enhanced-bg {
+            background-attachment: scroll;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+            image-rendering: optimize-quality;
+            -webkit-filter: contrast(1.1) saturate(1.2) brightness(1.05);
+            filter: contrast(1.1) saturate(1.2) brightness(1.05);
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+        /* Header Styles */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(34, 50, 34, 0.98);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+        }
+
+        /* Logo Styles */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 24px;
+            font-weight: 700;
+            color: #d4edaa;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo-img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover .logo-img {
+            transform: scale(1.05);
+        }
+
+        /* Navigation Styles */
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: #e8f5e9;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            position: relative;
+            padding: 8px 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, #8bc34a 0%, #5a8f3d 100%);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #a5d6a7;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link.active {
+            color: #a5d6a7;
+        }
+
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        /* CTA Button */
+        .cta-button {
+            background: linear-gradient(135deg, #8bc34a 0%, #5a8f3d 100%);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(139, 195, 74, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 195, 74, 0.4);
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+            padding: 8px;
+        }
+
+        .mobile-toggle span {
+            width: 25px;
+            height: 3px;
+            background: #e8f5e9;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .mobile-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 80px;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 50vh;
+            min-height: 350px;
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(51, 65, 85, 0.6) 100%), url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1920&h=1080&fit=crop&crop=center&q=90');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            color: #f1f5f9;
+            max-width: 600px;
+            margin: 0 auto;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .last-updated {
+            font-size: 16px;
+            color: #cbd5e1;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        /* Sections */
+        .section {
+            padding: 80px 0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Table of Contents */
+        .toc-section {
+            background: #f8fafc;
+            padding: 60px 0;
+        }
+
+        .toc-container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .toc-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .toc-list {
+            list-style: none;
+            counter-reset: toc-counter;
+        }
+
+        .toc-item {
+            counter-increment: toc-counter;
+            margin-bottom: 15px;
+        }
+
+        .toc-link {
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            background: #f8fafc;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #475569;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+
+        .toc-link::before {
+            content: counter(toc-counter);
+            background: linear-gradient(135deg, #8bc34a 0%, #5a8f3d 100%);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 14px;
+            margin-right: 15px;
+        }
+
+        .toc-link:hover {
+            background: rgba(139, 195, 74, 0.1);
+            border-left-color: #8bc34a;
+            transform: translateX(5px);
+        }
+
+        /* Content Sections */
+        .content-section {
+            margin-bottom: 60px;
+            scroll-margin-top: 100px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(135deg, #8bc34a 0%, #5a8f3d 100%);
+            border-radius: 2px;
+        }
+
+        .subsection-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #334155;
+            margin: 30px 0 20px 0;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .subsection-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            background: #8bc34a;
+            border-radius: 50%;
+        }
+
+        .content-text {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #475569;
+            margin-bottom: 20px;
+        }
+
+        .content-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .content-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 12px;
+            font-size: 16px;
+            line-height: 1.7;
+            color: #475569;
+        }
+
+        .content-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #8bc34a;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(139, 195, 74, 0.1) 0%, rgba(90, 143, 61, 0.05) 100%);
+            border: 1px solid rgba(139, 195, 74, 0.2);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+            position: relative;
+        }
+
+        .highlight-box::before {
+            content: '💡';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background: white;
+            padding: 0 10px;
+            font-size: 20px;
+        }
+
+        .highlight-title {
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        /* Contact Info Box */
+        .contact-box {
+            background: linear-gradient(135deg, #1e3a1e 0%, #2d4d2d 100%);
+            color: white;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .contact-box h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #f8fafc;
+        }
+
+        .contact-box p {
+            font-size: 16px;
+            color: #cbd5e1;
+            margin-bottom: 30px;
+        }
+
+        .contact-details {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #f8fafc;
+            font-weight: 500;
+        }
+
+        .contact-icon {
+            width: 20px;
+            height: 20px;
+            color: #8bc34a;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #8bc34a 0%, #5a8f3d 100%);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(139, 195, 74, 0.3);
+            z-index: 999;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(139, 195, 74, 0.4);
+        }
+
+        /* Footer Styles (same as home page) */
+        .footer {
+            background: linear-gradient(135deg, #1e3a1e 0%, #2d4d2d 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-main {
+            padding: 60px 0 40px;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 40px;
+        }
+
+        .footer-section h3.footer-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #f8fafc;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 24px;
+            font-weight: 700;
+            color: #f8fafc;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo .logo-img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .footer-description {
+            color: #cbd5e1;
+            line-height: 1.6;
+            margin-bottom: 24px;
+            font-size: 15px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-link {
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #cbd5e1;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-decoration: none;
+        }
+
+        .social-link svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .social-link:hover {
+            background: rgba(139, 195, 74, 0.2);
+            color: #8bc34a;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 195, 74, 0.2);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-link {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            position: relative;
+            padding-left: 0;
+        }
+
+        .footer-link::before {
+            content: '';
+            position: absolute;
+            left: -12px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 4px;
+            background: #8bc34a;
+            border-radius: 50%;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: #f8fafc;
+            padding-left: 12px;
+        }
+
+        .footer-link:hover::before {
+            opacity: 1;
+        }
+
+        .footer-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-contact p {
+            color: #cbd5e1;
+            font-size: 15px;
+        }
+
+        .newsletter-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 30px;
+            margin: 0 0 40px 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .newsletter-content {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .newsletter-content h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #f8fafc;
+        }
+
+        .newsletter-content p {
+            color: #cbd5e1;
+            font-size: 15px;
+        }
+
+        .newsletter-form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 0;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            padding: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .newsletter-input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            padding: 12px 20px;
+            color: white;
+            font-size: 15px;
+            outline: none;
+        }
+
+        .newsletter-input::placeholder {
+            color: #94a3b8;
+        }
+
+        .newsletter-button {
+            background: linear-gradient(135deg, #8bc34a 0%, #5a8f3d 100%);
+            border: none;
+            border-radius: 46px;
+            padding: 12px 24px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            font-size: 15px;
+        }
+
+        .newsletter-button:hover {
+            transform: translateX(2px);
+            box-shadow: 0 4px 15px rgba(139, 195, 74, 0.4);
+        }
+
+        .send-icon {
+            width: 16px;
+            height: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .newsletter-button:hover .send-icon {
+            transform: translateX(2px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 24px 0;
+        }
+
+        .footer-bottom-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .footer-bottom p {
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-bottom-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-bottom-links a:hover {
+            color: #cbd5e1;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 0 16px;
+                height: 70px;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: rgba(34, 50, 34, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 20px;
+                gap: 20px;
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-menu.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .mobile-toggle {
+                display: flex;
+            }
+
+            .nav {
+                gap: 20px;
+            }
+
+            .cta-button {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+
+            .logo {
+                font-size: 20px;
+            }
+
+            .logo-img {
+                width: 35px;
+                height: 35px;
+            }
+
+            .main-content {
+                margin-top: 70px;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .toc-section {
+                padding: 40px 0;
+            }
+
+            .toc-container {
+                padding: 30px 20px;
+            }
+
+            .contact-details {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .footer-main {
+                grid-template-columns: 1fr;
+                gap: 32px;
+                padding: 40px 0 30px;
+            }
+
+            .footer-section:first-child {
+                text-align: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
+            .newsletter-section {
+                padding: 24px 20px;
+                text-align: center;
+            }
+
+            .newsletter-content h3 {
+                font-size: 20px;
+            }
+
+            .input-group {
+                flex-direction: column;
+                gap: 12px;
+                background: transparent;
+                padding: 0;
+            }
+
+            .newsletter-input {
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 50px;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+            }
+
+            .footer-bottom-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 12px;
+            }
+
+            .footer-bottom-links {
+                gap: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-container {
+                height: 60px;
+            }
+
+            .nav-menu {
+                top: 60px;
+            }
+
+            .main-content {
+                margin-top: 60px;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 0 16px;
+            }
+
+            .toc-container {
+                padding: 20px 15px;
+            }
+
+            .toc-link {
+                padding: 12px 15px;
+            }
+
+            .footer-container {
+                padding: 0 16px;
+            }
+
+            .footer-main {
+                padding: 32px 0 24px;
+                gap: 24px;
+            }
+
+            .footer-title {
+                font-size: 16px;
+            }
+
+            .footer-bottom-links {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .newsletter-section {
+                padding: 20px 16px;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Smooth scrolling for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-container">
+            <!-- Logo -->
+            <a href="home.html" class="logo">
+                <img src="images/logo.jpg" alt="Nova Trails Logo" class="logo-img">
+                <span>Nova Trails</span>
+            </a>
+
+            <!-- Navigation -->
+            <nav class="nav">
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="home.html" class="nav-link">Home</a></li>
+                    <li><a href="destinations.html" class="nav-link">Destinations</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                
+                </nav>
+
+            <!-- Mobile Menu Toggle -->
+            <div class="mobile-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Privacy Policy</h1>
+                <p class="hero-subtitle">Your privacy and data protection are our top priorities</p>
+                <p class="last-updated">Last Updated: January 1, 2025</p>
+            </div>
+        </section>
+
+        <!-- Table of Contents -->
+        <section class="toc-section">
+            <div class="container">
+                <div class="toc-container">
+                    <h2 class="toc-title">Table of Contents</h2>
+                    <ol class="toc-list">
+                        <li class="toc-item">
+                            <a href="#overview" class="toc-link">Privacy Policy Overview</a>
+                        </li>
+                        <li class="toc-item">
+                            <a href="#information-collection" class="toc-link">Information We Collect</a>
+                        </li>
+                        <li class="toc-item">
+                            <a href="#information-use" class="toc-link">How We Use Your Information</a>
+                        </li>
+                        <li class="toc-item">
+                            <a href="#information-sharing" class="toc-link">Information Sharing and Disclosure</a>
+                        </li>
+                        <li class="toc-item">
+                            <a href="#data-security" class="toc-link">Data Security and Storage</a>
+                        </li>
+                        <li class="toc-item">
+                            <a href="#your-rights" class="toc-link">Your Rights and Choices</a>
+                        </li>
+                        <li class="toc-item">
+                            <a href="#cookies" class="toc-link">Cookies and Tracking Technologies</a>
+                        </li>
+                        <li class="toc-item">
+                            <a href="#third-party" class="toc-link">Third-Party Services</a>
+                        </li>
+                        <li class="toc-item">
+                            <a href="#international-transfers" class="toc-link">International Data Transfers</a>
+                        </li>
+                        <li class="toc-item">
+                            <a href="#children-privacy" class="toc-link">Children's Privacy</a>
+                        </li>
+                        <li class="toc-item">
+                            <a href="#changes" class="toc-link">Changes to This Policy</a>
+                        </li>
+                        <li class="toc-item">
+                            <a href="#contact" class="toc-link">Contact Information</a>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Privacy Policy Content -->
+        <section class="section">
+            <div class="container">
+                <!-- Overview -->
+                <div id="overview" class="content-section">
+                    <h2 class="section-title">1. Privacy Policy Overview</h2>
+                    <p class="content-text">
+                        At Nova Trails, we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website, use our services, or engage with us in any way.
+                    </p>
+                    <p class="content-text">
+                        We understand that planning and booking travel experiences involves sharing personal and sensitive information. We take this responsibility seriously and have implemented comprehensive measures to protect your data while providing you with exceptional travel services.
+                    </p>
+                    
+                    <div class="highlight-box">
+                        <h4 class="highlight-title">Key Principles</h4>
+                        <p class="content-text">
+                            Our privacy practices are built on transparency, minimal data collection, secure storage, and giving you control over your personal information. We only collect information necessary to provide our services and enhance your travel experience.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Information Collection -->
+                <div id="information-collection" class="content-section">
+                    <h2 class="section-title">2. Information We Collect</h2>
+                    
+                    <h3 class="subsection-title">Personal Information You Provide</h3>
+                    <p class="content-text">
+                        We collect information you voluntarily provide to us when you:
+                    </p>
+                    <ul class="content-list">
+                        <li>Register for an account or sign up for our newsletter</li>
+                        <li>Make a booking inquiry or reservation</li>
+                        <li>Contact us through our website, email, or phone</li>
+                        <li>Participate in surveys, contests, or promotional activities</li>
+                        <li>Submit reviews or feedback about our services</li>
+                        <li>Apply for employment with Nova Trails</li>
+                    </ul>
+
+                    <p class="content-text">This information may include:</p>
+                    <ul class="content-list">
+                        <li>Name, email address, and phone number</li>
+                        <li>Postal address and country of residence</li>
+                        <li>Date of birth and nationality</li>
+                        <li>Passport information (when required for bookings)</li>
+                        <li>Payment information and billing details</li>
+                        <li>Dietary restrictions, medical conditions, or special requirements</li>
+                        <li>Travel preferences and interests</li>
+                        <li>Emergency contact information</li>
+                    </ul>
+
+                    <h3 class="subsection-title">Information Automatically Collected</h3>
+                    <p class="content-text">
+                        When you visit our website or use our services, we may automatically collect certain information, including:
+                    </p>
+                    <ul class="content-list">
+                        <li>IP address and device information</li>
+                        <li>Browser type and version</li>
+                        <li>Operating system and device type</li>
+                        <li>Website usage data and navigation patterns</li>
+                        <li>Referring website and search terms</li>
+                        <li>Date and time of visits</li>
+                        <li>Geographic location (general area, not precise location)</li>
+                    </ul>
+
+                    <h3 class="subsection-title">Information from Third Parties</h3>
+                    <p class="content-text">
+                        We may receive information about you from third-party sources, including:
+                    </p>
+                    <ul class="content-list">
+                        <li>Travel partners and suppliers (hotels, airlines, tour operators)</li>
+                        <li>Payment processors and financial institutions</li>
+                        <li>Social media platforms (if you choose to connect your accounts)</li>
+                        <li>Marketing and analytics service providers</li>
+                        <li>References provided during the booking process</li>
+                    </ul>
+                </div>
+
+                <!-- Information Use -->
+                <div id="information-use" class="content-section">
+                    <h2 class="section-title">3. How We Use Your Information</h2>
+                    <p class="content-text">
+                        We use the information we collect for various purposes, including:
+                    </p>
+
+                    <h3 class="subsection-title">Service Provision</h3>
+                    <ul class="content-list">
+                        <li>Processing and fulfilling your travel bookings and reservations</li>
+                        <li>Communicating with you about your trips and bookings</li>
+                        <li>Providing customer support and assistance</li>
+                        <li>Coordinating with travel suppliers and partners</li>
+                        <li>Managing special requests and accommodations</li>
+                        <li>Ensuring your safety and security during travel</li>
+                    </ul>
+
+                    <h3 class="subsection-title">Communication and Marketing</h3>
+                    <ul class="content-list">
+                        <li>Sending you booking confirmations and travel documents</li>
+                        <li>Providing important updates about your trips</li>
+                        <li>Sharing relevant travel information and tips</li>
+                        <li>Sending promotional materials and special offers (with your consent)</li>
+                        <li>Conducting customer satisfaction surveys</li>
+                        <li>Responding to your inquiries and feedback</li>
+                    </ul>
+
+                    <h3 class="subsection-title">Business Operations</h3>
+                    <ul class="content-list">
+                        <li>Improving our website, services, and customer experience</li>
+                        <li>Analyzing usage patterns and preferences</li>
+                        <li>Conducting market research and analytics</li>
+                        <li>Preventing fraud and ensuring payment security</li>
+                        <li>Complying with legal and regulatory requirements</li>
+                        <li>Protecting our rights and interests</li>
+                    </ul>
+                </div>
+
+                <!-- Information Sharing -->
+                <div id="information-sharing" class="content-section">
+                    <h2 class="section-title">4. Information Sharing and Disclosure</h2>
+                    <p class="content-text">
+                        We do not sell, trade, or rent your personal information to third parties. However, we may share your information in the following circumstances:
+                    </p>
+
+                    <h3 class="subsection-title">Service Providers and Partners</h3>
+                    <ul class="content-list">
+                        <li>Hotels, lodges, and accommodation providers</li>
+                        <li>Airlines and transportation companies</li>
+                        <li>Local tour guides and ground operators</li>
+                        <li>Travel insurance providers</li>
+                        <li>Payment processors and financial institutions</li>
+                        <li>Technology service providers (hosting, analytics, customer support)</li>
+                    </ul>
+
+                    <h3 class="subsection-title">Legal Requirements</h3>
+                    <p class="content-text">
+                        We may disclose your information when required by law or to:
+                    </p>
+                    <ul class="content-list">
+                        <li>Comply with legal processes, court orders, or government requests</li>
+                        <li>Protect our rights, property, or safety</li>
+                        <li>Protect the rights, property, or safety of our customers</li>
+                        <li>Investigate potential violations of our terms of service</li>
+                        <li>Prevent or address fraud, security, or technical issues</li>
+                    </ul>
+
+                    <h3 class="subsection-title">Business Transfers</h3>
+                    <p class="content-text">
+                        In the event of a merger, acquisition, or sale of our business, your information may be transferred to the new entity, subject to the same privacy protections outlined in this policy.
+                    </p>
+                </div>
+
+                <!-- Data Security -->
+                <div id="data-security" class="content-section">
+                    <h2 class="section-title">5. Data Security and Storage</h2>
+                    <p class="content-text">
+                        We implement robust security measures to protect your personal information from unauthorized access, alteration, disclosure, or destruction.
+                    </p>
+
+                    <h3 class="subsection-title">Security Measures</h3>
+                    <ul class="content-list">
+                        <li>Encryption of sensitive data in transit and at rest</li>
+                        <li>Secure socket layer (SSL) technology for online transactions</li>
+                        <li>Regular security assessments and vulnerability testing</li>
+                        <li>Access controls and authentication procedures</li>
+                        <li>Employee training on data protection and privacy</li>
+                        <li>Regular backup and disaster recovery procedures</li>
+                    </ul>
+
+                    <h3 class="subsection-title">Data Retention</h3>
+                    <p class="content-text">
+                        We retain your personal information only for as long as necessary to fulfill the purposes outlined in this policy, comply with legal obligations, resolve disputes, and enforce our agreements. Specific retention periods include:
+                    </p>
+                    <ul class="content-list">
+                        <li>Booking and travel records: 7 years after trip completion</li>
+                        <li>Marketing communications: Until you unsubscribe</li>
+                        <li>Website usage data: 2 years from collection</li>
+                        <li>Customer support records: 3 years from last interaction</li>
+                        <li>Financial records: As required by applicable law</li>
+                    </ul>
+
+                    <div class="highlight-box">
+                        <h4 class="highlight-title">Important Security Note</h4>
+                        <p class="content-text">
+                            While we implement strong security measures, no method of transmission over the internet or electronic storage is 100% secure. We cannot guarantee absolute security, but we continuously work to protect your information using industry-standard practices.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Your Rights -->
+                <div id="your-rights" class="content-section">
+                    <h2 class="section-title">6. Your Rights and Choices</h2>
+                    <p class="content-text">
+                        You have several rights regarding your personal information. Depending on your location, these rights may include:
+                    </p>
+
+                    <h3 class="subsection-title">Access and Control</h3>
+                    <ul class="content-list">
+                        <li><strong>Access:</strong> Request copies of your personal information</li>
+                        <li><strong>Correction:</strong> Update or correct inaccurate information</li>
+                        <li><strong>Deletion:</strong> Request deletion of your personal information</li>
+                        <li><strong>Portability:</strong> Receive your data in a portable format</li>
+                        <li><strong>Restriction:</strong> Limit how we process your information</li>
+                        <li><strong>Objection:</strong> Object to certain types of processing</li>
+                    </ul>
+
+                    <h3 class="subsection-title">Marketing Preferences</h3>
+                    <p class="content-text">
+                        You can control your marketing preferences by:
+                    </p>
+                    <ul class="content-list">
+                        <li>Clicking "unsubscribe" in any marketing email</li>
+                        <li>Contacting us directly to update your preferences</li>
+                        <li>Managing your account settings (if applicable)</li>
+                        <li>Opting out of promotional communications during booking</li>
+                    </ul>
+
+                    <h3 class="subsection-title">Exercising Your Rights</h3>
+                    <p class="content-text">
+                        To exercise any of these rights, please contact us using the information provided in the "Contact Information" section. We will respond to your request within 30 days and may require verification of your identity to protect your privacy.
+                    </p>
+                </div>
+
+                <!-- Cookies -->
+                <div id="cookies" class="content-section">
+                    <h2 class="section-title">7. Cookies and Tracking Technologies</h2>
+                    <p class="content-text">
+                        We use cookies and similar tracking technologies to enhance your browsing experience, analyze website traffic, and understand user preferences.
+                    </p>
+
+                    <h3 class="subsection-title">Types of Cookies We Use</h3>
+                    <ul class="content-list">
+                        <li><strong>Essential Cookies:</strong> Necessary for website functionality</li>
+                        <li><strong>Performance Cookies:</strong> Help us understand how visitors use our site</li>
+                        <li><strong>Functional Cookies:</strong> Remember your preferences and settings</li>
+                        <li><strong>Marketing Cookies:</strong> Used to deliver relevant advertisements</li>
+                    </ul>
+
+                    <h3 class="subsection-title">Managing Cookies</h3>
+                    <p class="content-text">
+                        You can control cookie preferences through your browser settings. Most browsers allow you to:
+                    </p>
+                    <ul class="content-list">
+                        <li>View and delete cookies</li>
+                        <li>Block cookies from specific websites</li>
+                        <li>Block third-party cookies</li>
+                        <li>Clear all cookies when you close your browser</li>
+                        <li>Set your browser to notify you when cookies are being used</li>
+                    </ul>
+                </div>
+
+                <!-- Third Party Services -->
+                <div id="third-party" class="content-section">
+                    <h2 class="section-title">8. Third-Party Services</h2>
+                    <p class="content-text">
+                        Our website and services may contain links to third-party websites or integrate with third-party services. This privacy policy does not apply to these external sites or services.
+                    </p>
+
+                    <h3 class="subsection-title">Third-Party Integrations</h3>
+                    <ul class="content-list">
+                        <li>Payment processors (PayPal, Stripe, etc.)</li>
+                        <li>Social media platforms (Facebook, Instagram, Twitter)</li>
+                        <li>Analytics services (Google Analytics)</li>
+                        <li>Customer support tools</li>
+                        <li>Email marketing platforms</li>
+                        <li>Travel booking systems</li>
+                    </ul>
+
+                    <p class="content-text">
+                        We encourage you to review the privacy policies of any third-party services you interact with through our website or services.
+                    </p>
+                </div>
+
+                <!-- International Transfers -->
+                <div id="international-transfers" class="content-section">
+                    <h2 class="section-title">9. International Data Transfers</h2>
+                    <p class="content-text">
+                        As Nova Trails operates internationally and works with global travel partners, your personal information may be transferred to and processed in countries other than your country of residence.
+                    </p>
+
+                    <h3 class="subsection-title">Safeguards for International Transfers</h3>
+                    <ul class="content-list">
+                        <li>Ensuring adequate protection levels in destination countries</li>
+                        <li>Implementing appropriate contractual safeguards</li>
+                        <li>Using standard contractual clauses approved by regulatory authorities</li>
+                        <li>Obtaining your explicit consent when required</li>
+                        <li>Limiting transfers to what is necessary for service provision</li>
+                    </ul>
+                </div>
+
+                <!-- Children's Privacy -->
+                <div id="children-privacy" class="content-section">
+                    <h2 class="section-title">10. Children's Privacy</h2>
+                    <p class="content-text">
+                        Nova Trails does not knowingly collect personal information from children under the age of 16 without parental consent. Our services are designed for adults, and we require that bookings be made by individuals 18 years or older.
+                    </p>
+
+                    <h3 class="subsection-title">Family Travel</h3>
+                    <p class="content-text">
+                        When booking family travel that includes children:
+                    </p>
+                    <ul class="content-list">
+                        <li>The adult booker is responsible for providing children's information</li>
+                        <li>We collect only necessary information for travel arrangements</li>
+                        <li>Children's information is subject to the same protection measures</li>
+                        <li>Parents/guardians can request access, correction, or deletion of children's data</li>
+                    </ul>
+
+                    <p class="content-text">
+                        If we become aware that we have collected personal information from a child under 16 without proper consent, we will take steps to delete that information promptly.
+                    </p>
+                </div>
+
+                <!-- Changes to Policy -->
+                <div id="changes" class="content-section">
+                    <h2 class="section-title">11. Changes to This Privacy Policy</h2>
+                    <p class="content-text">
+                        We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, or other factors.
+                    </p>
+
+                    <h3 class="subsection-title">Notification of Changes</h3>
+                    <ul class="content-list">
+                        <li>We will post the updated policy on our website</li>
+                        <li>We will update the "Last Updated" date at the top of this policy</li>
+                        <li>For significant changes, we may provide additional notice via email</li>
+                        <li>Continued use of our services constitutes acceptance of changes</li>
+                    </ul>
+
+                    <p class="content-text">
+                        We encourage you to review this Privacy Policy periodically to stay informed about how we protect your information.
+                    </p>
+                </div>
+
+                <!-- Contact Information -->
+                <div id="contact" class="content-section">
+                    <div class="contact-box">
+                        <h3>Questions About This Privacy Policy?</h3>
+                        <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please don't hesitate to contact us.</p>
+                        
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <span class="contact-icon">📍</span>
+                                <span>Arusha, Tanzania</span>
+                            </div>
+                            <div class="contact-item">
+                                <span class="contact-icon">📞</span>
+                                <span>+255 744 667 778</span>
+                            </div>
+                            <div class="contact-item">
+                                <span class="contact-icon">✉️</span>
+                                <span>novatrails01@outlook.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">↑</button>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Main Footer Content -->
+            <div class="footer-main">
+                <!-- Company Info -->
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="images/logo.jpg" alt="Nova Trails Logo" class="logo-img">
+                        <span>Nova Trails</span>
+                    </div>
+                    <p class="footer-description">
+                        We create extraordinary adventures that connect you with the world's most incredible destinations and untouched wilderness experiences.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html" class="footer-link">About Us</a></li>
+                        <li><a href="destinations.html" class="footer-link">Destinations</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact</a></li>
+                        <li><a href="traveltips.html" class="footer-link">Travel Tips</a></li>
+                        <li><a href="blog.html" class="footer-link">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-section">
+                    <h3 class="footer-title">Contact Info</h3>
+                    <div class="footer-contact">
+                        <p>📍 Arusha, Tanzania</p>
+                        <p>📞 +255 744 667 778</p>
+                        <p>✉️ novatrails01@outlook.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Newsletter Signup -->
+            <div class="newsletter-section">
+                <div class="newsletter-content">
+                    <h3>Stay Updated</h3>
+                    <p>Subscribe to our newsletter for the latest travel deals and destination updates.</p>
+                </div>
+                <form class="newsletter-form" id="newsletterForm">
+                    <div class="input-group">
+                        <input type="email" placeholder="Enter your email" class="newsletter-input" required>
+                        <button type="submit" class="newsletter-button">
+                            <span>Subscribe</span>
+                            <svg class="send-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 Nova Trails. All rights reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="privacy-policy.html">Privacy Policy</a>
+                        <a href="terms.html">Terms of Service</a>
+                        <a href="cookies.html">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Mobile menu toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileToggle.addEventListener('click', () => {
+            mobileToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Newsletter form submission
+        const newsletterForm = document.getElementById('newsletterForm');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const email = e.target.querySelector('.newsletter-input').value;
+                
+                // Simple email validation
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (emailRegex.test(email)) {
+                    // Simulate success
+                    const button = e.target.querySelector('.newsletter-button');
+                    const originalText = button.innerHTML;
+                    button.innerHTML = '<span>✓ Subscribed!</span>';
+                    button.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+                    
+                    setTimeout(() => {
+                        button.innerHTML = originalText;
+                        button.style.background = 'linear-gradient(135deg, #8bc34a 0%, #5a8f3d 100%)';
+                        e.target.querySelector('.newsletter-input').value = '';
+                    }, 2000);
+                } else {
+                    // Show error state
+                    const input = e.target.querySelector('.newsletter-input');
+                    input.style.borderColor = '#ef4444';
+                    input.placeholder = 'Please enter a valid email';
+                    
+                    setTimeout(() => {
+                        input.style.borderColor = '';
+                        input.placeholder = 'Enter your email';
+                    }, 2000);
+                }
+            });
+        }
+
+        // Travel Inquiry Modal functionality
+        const modal = document.getElementById('inquiryModal');
+        const modalClose = document.getElementById('modalClose');
+        const travelForm = document.getElementById('travelInquiryForm');
+
+        // Function to open modal (used by Book Now buttons)
+        function openBookingModal() {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        }
+
+        // Close modal
+        modalClose.addEventListener('click', () => {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        // Close when clicking outside modal
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Travel form submission
+        if (travelForm) {
+            travelForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // Validate required fields
+                const requiredFields = travelForm.querySelectorAll('[required]');
+                let isValid = true;
+                
+                requiredFields.forEach(field => {
+                    if (!field.value) {
+                        field.style.borderColor = '#ef4444';
+                        isValid = false;
+                    } else {
+                        field.style.borderColor = '#cbd5e1';
+                    }
+                });
+                
+                if (isValid) {
+                    alert('Thank you for your inquiry! We will contact you shortly to plan your adventure.');
+                    modal.classList.remove('active');
+                    document.body.style.overflow = '';
+                    travelForm.reset();
+                } else {
+                    alert('Please fill in all required fields.');
+                }
+            });
+
+            // Reset field styles when user starts typing
+            const inputs = travelForm.querySelectorAll('input, select, textarea');
+            inputs.forEach(input => {
+                input.addEventListener('input', () => {
+                    input.style.borderColor = '#cbd5e1';
+                });
+            });
+
+            // Set minimum date for date inputs to today
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('startDate').min = today;
+            document.getElementById('endDate').min = today;
+
+            // Update end date min when start date changes
+            document.getElementById('startDate').addEventListener('change', function() {
+                document.getElementById('endDate').min = this.value;
+            });
+        }
+
+        // Back to Top Button
+        const backToTop = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth scrolling for table of contents links
+        const tocLinks = document.querySelectorAll('.toc-link');
+        tocLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    const headerOffset = 100; // Account for fixed header
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Highlight current section in table of contents
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '-100px 0px -50% 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Remove active class from all TOC links
+                    tocLinks.forEach(link => {
+                        link.style.background = '#f8fafc';
+                        link.style.borderLeftColor = 'transparent';
+                        link.style.transform = 'translateX(0)';
+                    });
+                    
+                    // Add active class to current section's TOC link
+                    const activeLink = document.querySelector(`.toc-link[href="#${entry.target.id}"]`);
+                    if (activeLink) {
+                        activeLink.style.background = 'rgba(139, 195, 74, 0.1)';
+                        activeLink.style.borderLeftColor = '#8bc34a';
+                        activeLink.style.transform = 'translateX(5px)';
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Observe all content sections
+        const contentSections = document.querySelectorAll('.content-section');
+        contentSections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Animate content sections on scroll
+        const animationObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        // Set initial state and observe content sections
+        contentSections.forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'all 0.6s ease';
+            animationObserver.observe(section);
+        });
+
+        // Enhanced hover effects for TOC links
+        tocLinks.forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                if (link.style.background !== 'rgba(139, 195, 74, 0.1)') {
+                    link.style.background = 'rgba(139, 195, 74, 0.05)';
+                    link.style.transform = 'translateX(3px)';
+                }
+            });
+            
+            link.addEventListener('mouseleave', () => {
+                if (link.style.background !== 'rgba(139, 195, 74, 0.1)') {
+                    link.style.background = '#f8fafc';
+                    link.style.transform = 'translateX(0)';
+                }
+            });
+        });
+
+        // Print functionality (optional)
+        function printPrivacyPolicy() {
+            window.print();
+        }
+
+        // Add keyboard navigation for accessibility
+        document.addEventListener('keydown', (e) => {
+            // Press 'T' to focus on table of contents
+            if (e.key === 't' || e.key === 'T') {
+                if (!e.ctrlKey && !e.altKey && !e.metaKey) {
+                    const firstTocLink = document.querySelector('.toc-link');
+                    if (firstTocLink) {
+                        firstTocLink.focus();
+                    }
+                }
+            }
+            
+            // Press 'B' to go back to top
+            if (e.key === 'b' || e.key === 'B') {
+                if (!e.ctrlKey && !e.altKey && !e.metaKey) {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
+
+        // Add focus styles for better accessibility
+        const style = document.createElement('style');
+        style.textContent = `
+            .toc-link:focus {
+                outline: 2px solid #8bc34a;
+                outline-offset: 2px;
+            }
+            
+            .content-section:target {
+                animation: highlight 2s ease-in-out;
+            }
+            
+            @keyframes highlight {
+                0% { background-color: rgba(139, 195, 74, 0.1); }
+                100% { background-color: transparent; }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

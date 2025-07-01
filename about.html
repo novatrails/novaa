@@ -1,0 +1,2101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Nova Trails</title>
+    <meta name="description" content="Learn about Nova Trails - passionate explorers creating extraordinary adventures in Tanzania's most incredible destinations">
+    <meta name="author" content="Nova Trails">
+    <link rel="icon" type="image/png" href="images/logo.jpg">  
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Enhanced Image Quality CSS */
+        img {
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+            image-rendering: optimize-quality;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+        }
+
+        /* Enhanced background image quality */
+        .enhanced-bg {
+            background-attachment: scroll;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+            image-rendering: optimize-quality;
+            -webkit-filter: contrast(1.1) saturate(1.2) brightness(1.05);
+            filter: contrast(1.1) saturate(1.2) brightness(1.05);
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+        /* Header Styles */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(34, 50, 34, 0.98);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+        }
+
+        /* Logo Styles */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 24px;
+            font-weight: 700;
+            color: #d4edaa;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #5a8f3d 0%, #2e5e1a 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            box-shadow: 0 4px 12px rgba(90, 143, 61, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover .logo-icon {
+            transform: rotate(5deg);
+            box-shadow: 0 6px 20px rgba(90, 143, 61, 0.4);
+        }
+
+        /* Navigation Styles */
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: #e8f5e9;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            position: relative;
+            padding: 8px 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, #8bc34a 0%, #5a8f3d 100%);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #a5d6a7;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link.active {
+            color: #a5d6a7;
+        }
+
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        /* CTA Button */
+        .cta-button {
+            background: linear-gradient(135deg, #8bc34a 0%, #5a8f3d 100%);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(139, 195, 74, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 195, 74, 0.4);
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+            padding: 8px;
+        }
+
+        .mobile-toggle span {
+            width: 25px;
+            height: 3px;
+            background: #e8f5e9;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .mobile-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 80px;
+        }
+
+        /* Page Hero Section */
+        .page-hero {
+            position: relative;
+            height: 60vh;
+            min-height: 400px;
+            background-image: url('https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=1920&h=1080&fit=crop&crop=center&q=90');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            -webkit-filter: contrast(1.15) saturate(1.3) brightness(1.1);
+            filter: contrast(1.15) saturate(1.3) brightness(1.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .page-hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.4) 0%, rgba(51, 65, 85, 0.3) 100%);
+        }
+
+        .page-hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .page-hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            text-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+        }
+
+        .page-hero-subtitle {
+            font-size: 20px;
+            color: #f1f5f9;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            background: #f8fafc;
+            padding: 20px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .breadcrumb-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .breadcrumb-nav {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #64748b;
+        }
+
+        .breadcrumb-link {
+            color: #8bc34a;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumb-link:hover {
+            color: #5a8f3d;
+        }
+
+        .breadcrumb-separator {
+            color: #94a3b8;
+        }
+
+        /* Sections */
+        .section {
+            padding: 80px 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 16px;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: #64748b;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Story Section */
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+
+        .story-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 24px;
+        }
+
+        .story-content p {
+            font-size: 18px;
+            color: #64748b;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .story-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+            -webkit-filter: contrast(1.1) saturate(1.3) brightness(1.05);
+            filter: contrast(1.1) saturate(1.3) brightness(1.05);
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+            image-rendering: optimize-quality;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            transform: translateZ(0);
+            transition: all 0.3s ease;
+        }
+
+        .story-image:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Values Section */
+        .values-section {
+            background: #f8fafc;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .value-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid #f1f5f9;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 24px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: white;
+            background: linear-gradient(135deg, #8bc34a 0%, #5a8f3d 100%);
+            box-shadow: 0 8px 25px rgba(139, 195, 74, 0.3);
+        }
+
+        .value-card h4 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 16px;
+        }
+
+        .value-card p {
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        /* Team Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .team-member {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .team-photo {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            -webkit-filter: contrast(1.1) saturate(1.2) brightness(1.05);
+            filter: contrast(1.1) saturate(1.2) brightness(1.05);
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+            image-rendering: optimize-quality;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            transform: translateZ(0);
+        }
+
+        .team-info {
+            padding: 30px;
+            text-align: center;
+        }
+
+        .team-name {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 8px;
+        }
+
+        .team-role {
+            color: #8bc34a;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+
+        .team-bio {
+            color: #64748b;
+            line-height: 1.6;
+            font-size: 15px;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: linear-gradient(135deg, #1e3a1e 0%, #2d4d2d 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1920&h=600&fit=crop&crop=center&q=90');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+            -webkit-filter: contrast(1.2) saturate(1.3);
+            filter: contrast(1.2) saturate(1.3);
+        }
+
+        .stats-grid {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #8bc34a;
+            margin-bottom: 8px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .stat-label {
+            font-size: 18px;
+            color: #cbd5e1;
+            font-weight: 500;
+        }
+
+        /* Awards Section */
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .award-item {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+            border: 1px solid #f1f5f9;
+            transition: all 0.3s ease;
+        }
+
+        .award-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .award-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+        }
+
+        .award-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 8px;
+        }
+
+        .award-year {
+            color: #64748b;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .award-description {
+            color: #64748b;
+            line-height: 1.5;
+            font-size: 14px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #1e3a1e 0%, #2d4d2d 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1920&h=800&fit=crop&crop=center&q=90');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+            -webkit-filter: contrast(1.2) saturate(1.3);
+            filter: contrast(1.2) saturate(1.3);
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .cta-description {
+            font-size: 18px;
+            color: #cbd5e1;
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #8bc34a 0%, #5a8f3d 100%);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(139, 195, 74, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 195, 74, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Footer Styles */
+        .footer {
+            background: linear-gradient(135deg, #1e3a1e 0%, #2d4d2d 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-main {
+            padding: 60px 0 40px;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 40px;
+        }
+
+        .footer-section h3.footer-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #f8fafc;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 24px;
+            font-weight: 700;
+            color: #f8fafc;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #8bc34a 0%, #5a8f3d 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            box-shadow: 0 4px 12px rgba(139, 195, 74, 0.3);
+        }
+
+        .footer-description {
+            color: #cbd5e1;
+            line-height: 1.6;
+            margin-bottom: 24px;
+            font-size: 15px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-link {
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #cbd5e1;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-decoration: none;
+        }
+
+        .social-link svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .social-link:hover {
+            background: rgba(139, 195, 74, 0.2);
+            color: #8bc34a;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 195, 74, 0.2);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-link {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            position: relative;
+            padding-left: 0;
+        }
+
+        .footer-link::before {
+            content: '';
+            position: absolute;
+            left: -12px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 4px;
+            background: #8bc34a;
+            border-radius: 50%;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: #f8fafc;
+            padding-left: 12px;
+        }
+
+        .footer-link:hover::before {
+            opacity: 1;
+        }
+
+        .footer-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-contact p {
+            color: #cbd5e1;
+            font-size: 15px;
+        }
+
+        .newsletter-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 30px;
+            margin: 0 0 40px 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .newsletter-content {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .newsletter-content h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #f8fafc;
+        }
+
+        .newsletter-content p {
+            color: #cbd5e1;
+            font-size: 15px;
+        }
+
+        .newsletter-form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 0;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            padding: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .newsletter-input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            padding: 12px 20px;
+            color: white;
+            font-size: 15px;
+            outline: none;
+        }
+
+        .newsletter-input::placeholder {
+            color: #94a3b8;
+        }
+
+        .newsletter-button {
+            background: linear-gradient(135deg, #8bc34a 0%, #5a8f3d 100%);
+            border: none;
+            border-radius: 46px;
+            padding: 12px 24px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            font-size: 15px;
+        }
+
+        .newsletter-button:hover {
+            transform: translateX(2px);
+            box-shadow: 0 4px 15px rgba(139, 195, 74, 0.4);
+        }
+
+        .send-icon {
+            width: 16px;
+            height: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .newsletter-button:hover .send-icon {
+            transform: translateX(2px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 24px 0;
+        }
+
+        .footer-bottom-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .footer-bottom p {
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-bottom-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-bottom-links a:hover {
+            color: #cbd5e1;
+        }
+
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 10000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease-out;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-container {
+            background-color: white;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 90vh;
+            overflow-y: auto;
+            transform: translateY(20px);
+            transition: transform 0.3s ease-out;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal-overlay.active .modal-container {
+            transform: translateY(0);
+        }
+
+        .modal-header {
+            padding: 20px;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease-out;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-container {
+            background-color: white;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 90vh;
+            overflow-y: auto;
+            transform: translateY(20px);
+            transition: transform 0.3s ease-out;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal-overlay.active .modal-container {
+            transform: translateY(0);
+        }
+
+        .modal-header {
+            padding: 20px;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin: 0;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #64748b;
+            transition: color 0.2s;
+        }
+
+        .modal-close:hover {
+            color: #334155;
+        }
+
+        .modal-body {
+            padding: 20px;
+        }
+
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #334155;
+        }
+
+        .form-label.required::after {
+            content: '*';
+            color: #ef4444;
+            margin-left: 4px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #8bc34a;
+            box-shadow: 0 0 0 3px rgba(139, 195, 74, 0.2);
+        }
+
+        .form-select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2364748b' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            background-size: 16px;
+        }
+
+        .form-textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .form-helper {
+            font-size: 0.875rem;
+            color: #64748b;
+            margin-top: 4px;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 20px;
+        }
+
+        .form-col {
+            flex: 1;
+        }
+
+        .btn-submit {
+            background: linear-gradient(135deg, #8bc34a 0%, #5a8f3d 100%);
+            color: white;
+            padding: 14px 24px;
+            border-radius: 8px;
+            border: none;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(139, 195, 74, 0.4);
+        }
+
+        /* Animation for form elements */
+        .form-group {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .modal-overlay.active .form-group {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Stagger the animations */
+        .modal-overlay.active .form-group:nth-child(1) { transition-delay: 0.1s; }
+        .modal-overlay.active .form-group:nth-child(2) { transition-delay: 0.15s; }
+        .modal-overlay.active .form-group:nth-child(3) { transition-delay: 0.2s; }
+        .modal-overlay.active .form-group:nth-child(4) { transition-delay: 0.25s; }
+        .modal-overlay.active .form-group:nth-child(5) { transition-delay: 0.3s; }
+        .modal-overlay.active .form-group:nth-child(6) { transition-delay: 0.35s; }
+        .modal-overlay.active .form-group:nth-child(7) { transition-delay: 0.4s; }
+        .modal-overlay.active .form-group:nth-child(8) { transition-delay: 0.45s; }
+        .modal-overlay.active .form-group:nth-child(9) { transition-delay: 0.5s; }
+        .modal-overlay.active .form-group:nth-child(10) { transition-delay: 0.55s; }
+        .modal-overlay.active .form-group:nth-child(11) { transition-delay: 0.6s; }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 0 16px;
+                height: 70px;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: rgba(34, 50, 34, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 20px;
+                gap: 20px;
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-menu.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .mobile-toggle {
+                display: flex;
+            }
+
+            .nav {
+                gap: 20px;
+            }
+
+            .cta-button {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+
+            .logo {
+                font-size: 20px;
+            }
+
+            .logo-icon {
+                width: 35px;
+                height: 35px;
+                font-size: 18px;
+            }
+
+            .main-content {
+                margin-top: 70px;
+            }
+
+            .page-hero {
+                height: 50vh;
+                min-height: 300px;
+            }
+
+            .page-hero-title {
+                font-size: 2.5rem;
+            }
+
+            .page-hero-subtitle {
+                font-size: 18px;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .story-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .story-content h3 {
+                font-size: 1.8rem;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+
+            .awards-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .cta-title {
+                font-size: 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            /* Footer Mobile Styles */
+            .footer-main {
+                grid-template-columns: 1fr;
+                gap: 32px;
+                padding: 40px 0 30px;
+            }
+
+            .footer-section:first-child {
+                text-align: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
+            .newsletter-section {
+                padding: 24px 20px;
+                text-align: center;
+            }
+
+            .newsletter-content h3 {
+                font-size: 20px;
+            }
+
+            .input-group {
+                flex-direction: column;
+                gap: 12px;
+                background: transparent;
+                padding: 0;
+            }
+
+            .newsletter-input {
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 50px;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+            }
+
+            .footer-bottom-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 12px;
+            }
+
+            .footer-bottom-links {
+                gap: 16px;
+            }
+
+            /* Modal responsive styles */
+            .form-row {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .modal-container {
+                width: 95%;
+            }
+            
+            .modal-title {
+                font-size: 1.25rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-container {
+                height: 60px;
+            }
+
+            .logo {
+                font-size: 18px;
+            }
+
+            .logo-icon {
+                width: 30px;
+                height: 30px;
+                font-size: 16px;
+            }
+
+            .nav-menu {
+                top: 60px;
+            }
+
+            .cta-button {
+                padding: 8px 16px;
+                font-size: 13px;
+            }
+
+            .main-content {
+                margin-top: 60px;
+            }
+
+            .page-hero-title {
+                font-size: 2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            /* Footer Mobile Adjustments */
+            .footer-container {
+                padding: 0 16px;
+            }
+
+            .footer-main {
+                padding: 32px 0 24px;
+                gap: 24px;
+            }
+
+            .footer-title {
+                font-size: 16px;
+            }
+
+            .footer-bottom-links {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .newsletter-section {
+                padding: 20px 16px;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .footer-main {
+                grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+                gap: 32px;
+            }
+        }
+
+        .logo-img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.logo:hover .logo-img {
+    transform: scale(1.05);
+}
+
+/* Update the footer logo to match */
+.footer-logo .logo-img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-container">
+            <!-- Logo -->
+            <a href="home.html" class="logo">
+                <img src="images/logo.jpg" alt="Nova Trails Logo" class="logo-img">
+                <span>Nova Trails</span>
+            </a>
+
+            <!-- Navigation -->
+            <nav class="nav">
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="home.html" class="nav-link">Home</a></li>
+                    <li><a href="destinations.html" class="nav-link">Destinations</a></li>
+                    <li><a href="about.html" class="nav-link active">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                
+                <!-- CTA Button -->
+                <button onclick="openBookingModal()" class="cta-button">Book Now</button>
+            </nav>
+
+            <!-- Mobile Menu Toggle -->
+            <div class="mobile-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Page Hero Section -->
+        <section class="page-hero">
+            <div class="page-hero-overlay"></div>
+            <div class="page-hero-content">
+                <h1 class="page-hero-title">About Nova Trails</h1>
+                <p class="page-hero-subtitle">Passionate explorers creating extraordinary adventures in Tanzania's wilderness</p>
+            </div>
+        </section>
+
+        <!-- Breadcrumb -->
+        <section class="breadcrumb">
+            <div class="breadcrumb-container">
+                <nav class="breadcrumb-nav">
+                    <a href="home.html" class="breadcrumb-link">Home</a>
+                    <span class="breadcrumb-separator">›</span>
+                    <span>About Us</span>
+                </nav>
+            </div>
+        </section>
+
+        <!-- Our Story Section -->
+        <section class="section story-section">
+            <div class="container">
+                <div class="story-grid">
+                    <div class="story-content">
+                        <h3>Our Story Begins in the Heart of Africa</h3>
+                        <p>Nova Trails was born from a simple belief: that the world's most extraordinary experiences happen when you venture beyond the ordinary. Founded in 2018 by a team of passionate explorers who fell in love with Tanzania's untamed beauty, we've dedicated ourselves to sharing these incredible landscapes with fellow adventurers.</p>
+                        <p>What started as a small group of friends sharing their love for the Serengeti has grown into Tanzania's premier adventure travel company. Yet our mission remains unchanged: to create authentic, transformative experiences that connect travelers with the raw beauty of East Africa while supporting local communities and conservation efforts.</p>
+                        <p>Every journey we craft tells a story – of ancient migrations, towering peaks, pristine beaches, and the warm-hearted people who call this land home. We're not just tour operators; we're storytellers, conservationists, and your gateway to experiences that will change how you see the world.</p>
+                    </div>
+                    <div class="story-image-container">
+                        <img src="images/about/story.jpg" alt="Our Story" class="story-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Values Section -->
+        <section class="section values-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Our Core Values</h2>
+                    <p class="section-subtitle">The principles that guide every adventure we create and every relationship we build</p>
+                </div>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="value-icon">🌍</div>
+                        <h4>Sustainable Tourism</h4>
+                        <p>We believe in responsible travel that preserves Tanzania's natural beauty for future generations while benefiting local communities through meaningful economic opportunities.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">🔍</div>
+                        <h4>Authentic Experiences</h4>
+                        <p>We create genuine connections with local cultures and untouched wilderness, avoiding tourist traps to show you the real Tanzania that most visitors never see.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">🏆</div>
+                        <h4>Uncompromising Quality</h4>
+                        <p>From expert guides to carefully selected accommodations, every detail is meticulously planned to ensure your adventure exceeds expectations at every turn.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">❤️</div>
+                        <h4>Passionate Service</h4>
+                        <p>Our team's love for Tanzania shines through in everything we do. We're not just professionals; we're enthusiasts who can't wait to share our homeland with you.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">🤝</div>
+                        <h4>Community Partnership</h4>
+                        <p>We work hand-in-hand with local communities, ensuring our tours provide meaningful benefits and cultural exchange that enriches both travelers and hosts.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">🛡️</div>
+                        <h4>Safety First</h4>
+                        <p>Your safety and peace of mind are paramount. We maintain the highest safety standards while ensuring you can focus on the wonder of your African adventure.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="section team-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Meet Our Team</h2>
+                    <p class="section-subtitle">The passionate professionals who make every Nova Trails adventure extraordinary</p>
+                </div>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face&q=90" alt="David Kimaro" class="team-photo">
+                        <div class="team-info">
+                            <h4 class="team-name">David Kimaro</h4>
+                            <p class="team-role">Founder & Lead Guide</p>
+                            <p class="team-bio">Born and raised in Arusha, David has been exploring Tanzania's wilderness for over 15 years. His encyclopedic knowledge of wildlife behavior and passion for conservation make him an extraordinary guide.</p>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b593?w=400&h=400&fit=crop&crop=face&q=90" alt="Sarah Mitchell" class="team-photo">
+                        <div class="team-info">
+                            <h4 class="team-name">Sarah Mitchell</h4>
+                            <p class="team-role">Operations Director</p>
+                            <p class="team-bio">A former travel journalist from the UK, Sarah fell in love with Tanzania during a writing assignment and never left. She ensures every detail of your journey is perfectly orchestrated.</p>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face&q=90" alt="James Mwalimu" class="team-photo">
+                        <div class="team-info">
+                            <h4 class="team-name">James Mwalimu</h4>
+                            <p class="team-role">Kilimanjaro Specialist</p>
+                            <p class="team-bio">Having summited Kilimanjaro over 200 times, James is one of Tanzania's most experienced mountain guides. His calm demeanor and expertise help climbers achieve their dreams safely.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="section stats-section">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">2500+</div>
+                        <div class="stat-label">Happy Travelers</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Safari Adventures</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">150+</div>
+                        <div class="stat-label">Kilimanjaro Summits</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">5</div>
+                        <div class="stat-label">Years of Excellence</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Awards Section -->
+        <section class="section awards-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Recognition & Awards</h2>
+                    <p class="section-subtitle">Our commitment to excellence has been recognized by industry leaders and travelers alike</p>
+                </div>
+                <div class="awards-grid">
+                    <div class="award-item">
+                        <div class="award-icon">🏆</div>
+                        <h4 class="award-title">Best Safari Operator</h4>
+                        <p class="award-year">Tanzania Tourism Awards 2024</p>
+                        <p class="award-description">Recognized for outstanding service and authentic safari experiences in northern Tanzania.</p>
+                    </div>
+                    <div class="award-item">
+                        <div class="award-icon">🌟</div>
+                        <h4 class="award-title">Excellence in Sustainable Tourism</h4>
+                        <p class="award-year">East African Travel Association 2023</p>
+                        <p class="award-description">Honored for our commitment to responsible tourism and community development initiatives.</p>
+                    </div>
+                    <div class="award-item">
+                        <div class="award-icon">❤️</div>
+                        <h4 class="award-title">Travelers' Choice Award</h4>
+                        <p class="award-year">TripAdvisor 2023</p>
+                        <p class="award-description">Ranked in the top 1% of travel experiences worldwide based on traveler reviews.</p>
+                    </div>
+                    <div class="award-item">
+                        <div class="award-icon">🔰</div>
+                        <h4 class="award-title">Certified Mountain Guide</h4>
+                        <p class="award-year">Kilimanjaro National Park 2022</p>
+                        <p class="award-description">Official recognition for maintaining the highest standards in mountain guiding and safety.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="section cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2 class="cta-title">Ready to Explore Tanzania?</h2>
+                    <p class="cta-description">Join thousands of travelers who have discovered the magic of Tanzania with Nova Trails. Let us create an unforgettable adventure that you'll treasure for a lifetime.</p>
+                    <div class="cta-buttons">
+                        <button onclick="openBookingModal()" class="btn-primary">Start Planning</button>
+                        <a href="contact.html" class="btn-secondary">Get in Touch</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Main Footer Content -->
+            <div class="footer-main">
+                <!-- Company Info -->
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="images/logo.jpg" alt="Nova Trails Logo" class="logo-img">
+                        <span>Nova Trails</span>
+                    </div>
+                    <p class="footer-description">
+                        We create extraordinary adventures that connect you with the world's most incredible destinations and untouched wilderness experiences.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html" class="footer-link">About Us</a></li>
+                        <li><a href="destinations.html" class="footer-link">Destinations</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact</a></li>
+                        <li><a href="#" class="footer-link">Travel Tips</a></li>
+                        <li><a href="#" class="footer-link">Blog</a></li>
+                        <li><a href="#" class="footer-link">Reviews</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div class="footer-section">
+                    <h3 class="footer-title">Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">Safari Tours</a></li>
+                        <li><a href="#" class="footer-link">Kilimanjaro Climbing</a></li>
+                        <li><a href="#" class="footer-link">Cultural Experiences</a></li>
+                        <li><a href="#" class="footer-link">Beach Holidays</a></li>
+                        <li><a href="#" class="footer-link">Photography Tours</a></li>
+                        <li><a href="#" class="footer-link">Group Packages</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-section">
+                    <h3 class="footer-title">Contact Info</h3>
+                    <div class="footer-contact">
+                        <p>📍 Arusha, Tanzania</p>
+                        <p>📞 +255 744 667 778</p>
+                        <p>✉️ novatrails01@outlook.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Newsletter Signup -->
+            <div class="newsletter-section">
+                <div class="newsletter-content">
+                    <h3>Stay Updated</h3>
+                    <p>Subscribe to our newsletter for the latest travel deals and destination updates.</p>
+                </div>
+                <form class="newsletter-form" id="newsletterForm">
+                    <div class="input-group">
+                        <input type="email" placeholder="Enter your email" class="newsletter-input" required>
+                        <button type="submit" class="newsletter-button">
+                            <span>Subscribe</span>
+                            <svg class="send-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 Nova Trails. All rights reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Travel Inquiry Modal -->
+    <div class="modal-overlay" id="inquiryModal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2 class="modal-title">Plan Your Adventure</h2>
+                <button class="modal-close" id="modalClose">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="travelInquiryForm">
+                    <div class="form-row">
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="firstName" class="form-label required">First Name</label>
+                                <input type="text" id="firstName" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="lastName" class="form-label required">Last Name</label>
+                                <input type="text" id="lastName" class="form-control" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="email" class="form-label required">Email Address</label>
+                                <input type="email" id="email" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="phone" class="form-label required">Phone Number</label>
+                                <input type="tel" id="phone" class="form-control" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="country" class="form-label required">Country of Citizenship</label>
+                        <input type="text" id="country" class="form-control" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="adults" class="form-label required">Number of Adults</label>
+                                <select id="adults" class="form-control form-select" required>
+                                    <option value="" disabled selected>Select</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5+</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="children" class="form-label required">Number of Children</label>
+                                <select id="children" class="form-control form-select" required>
+                                    <option value="" disabled selected>Select</option>
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4+</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="experience" class="form-label required">What Experiences Are You Interested In?</label>
+                        <select id="experience" class="form-control form-select" required>
+                            <option value="" disabled selected>Select an option</option>
+                            <option value="Wildlife Safari">Wildlife Safari</option>
+                            <option value="Zanzibar Island Escape">Zanzibar Island Escape</option>
+                            <option value="Mount Kilimanjaro Trek">Mount Kilimanjaro Trek</option>
+                            <option value="Combined Safari Experience">Combined Safari Experience</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="groupType" class="form-label required">Who Will Be Joining You?</label>
+                        <select id="groupType" class="form-control form-select" required>
+                            <option value="" disabled selected>Select an option</option>
+                            <option value="Traveling Solo">Traveling Solo</option>
+                            <option value="As a Couple">As a Couple</option>
+                            <option value="With Family">With Family</option>
+                            <option value="Group Tour">Group Tour</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="startDate" class="form-label required">Start Date</label>
+                                <input type="date" id="startDate" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="endDate" class="form-label required">End Date</label>
+                                <input type="date" id="endDate" class="form-control" required>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="form-helper">Providing your travel dates helps us tailor the perfect itinerary for you.</p>
+
+                    <div class="form-group">
+                        <label for="budget" class="form-label required">Your Budget Range (in USD)</label>
+                        <select id="budget" class="form-control form-select" required>
+                            <option value="" disabled selected>Select budget range</option>
+                            <option value="Under $1,000">Under $1,000</option>
+                            <option value="$1,000 - $2,500">$1,000 - $2,500</option>
+                            <option value="$2,500 - $5,000">$2,500 - $5,000</option>
+                            <option value="$5,000 - $10,000">$5,000 - $10,000</option>
+                            <option value="Over $10,000">Over $10,000</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="specialRequests" class="form-label">Any Special Requests or Preferences?</label>
+                        <textarea id="specialRequests" class="form-control form-textarea"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="discovery" class="form-label">How Did You Discover Us?</label>
+                        <select id="discovery" class="form-control form-select">
+                            <option value="" selected>Select an option</option>
+                            <option value="Referred by a Friend">Referred by a Friend</option>
+                            <option value="Social Media Platforms">Social Media Platforms</option>
+                            <option value="Search Engine">Search Engine</option>
+                            <option value="Travel Magazine">Travel Magazine</option>
+                            <option value="Other Sources">Other Sources</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn-submit">Submit Your Travel Request</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileToggle.addEventListener('click', () => {
+            mobileToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Newsletter form submission
+        const newsletterForm = document.getElementById('newsletterForm');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const email = e.target.querySelector('.newsletter-input').value;
+                
+                // Simple email validation
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (emailRegex.test(email)) {
+                    // Simulate success
+                    const button = e.target.querySelector('.newsletter-button');
+                    const originalText = button.innerHTML;
+                    button.innerHTML = '<span>✓ Subscribed!</span>';
+                    button.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+                    
+                    setTimeout(() => {
+                        button.innerHTML = originalText;
+                        button.style.background = 'linear-gradient(135deg, #8bc34a 0%, #5a8f3d 100%)';
+                        e.target.querySelector('.newsletter-input').value = '';
+                    }, 2000);
+                } else {
+                    // Show error state
+                    const input = e.target.querySelector('.newsletter-input');
+                    input.style.borderColor = '#ef4444';
+                    input.placeholder = 'Please enter a valid email';
+                    
+                    setTimeout(() => {
+                        input.style.borderColor = '';
+                        input.placeholder = 'Enter your email';
+                    }, 2000);
+                }
+            });
+        }
+
+        // Travel Inquiry Modal functionality
+        const modal = document.getElementById('inquiryModal');
+        const modalClose = document.getElementById('modalClose');
+        const travelForm = document.getElementById('travelInquiryForm');
+
+        // Function to open modal (used by Book Now buttons)
+        function openBookingModal() {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        }
+
+        // Close modal
+        modalClose.addEventListener('click', () => {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        // Close when clicking outside modal
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Form submission
+        if (travelForm) {
+            travelForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // Validate required fields
+                const requiredFields = travelForm.querySelectorAll('[required]');
+                let isValid = true;
+                
+                requiredFields.forEach(field => {
+                    if (!field.value) {
+                        field.style.borderColor = '#ef4444';
+                        isValid = false;
+                    } else {
+                        field.style.borderColor = '#cbd5e1';
+                    }
+                });
+                
+                if (isValid) {
+                    // Here you would normally send the form data to your server
+                    alert('Thank you for your inquiry! We will contact you shortly to plan your adventure.');
+                    modal.classList.remove('active');
+                    document.body.style.overflow = '';
+                    travelForm.reset();
+                } else {
+                    alert('Please fill in all required fields.');
+                }
+            });
+
+            // Reset field styles when user starts typing
+            const inputs = travelForm.querySelectorAll('input, select, textarea');
+            inputs.forEach(input => {
+                input.addEventListener('input', () => {
+                    input.style.borderColor = '#cbd5e1';
+                });
+            });
+
+            // Set minimum date for date inputs to today
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('startDate').min = today;
+            document.getElementById('endDate').min = today;
+
+            // Update end date min when start date changes
+            document.getElementById('startDate').addEventListener('change', function() {
+                document.getElementById('endDate').min = this.value;
+            });
+        }
+
+        // Smooth scroll behavior for better UX
+        document.documentElement.style.scrollBehavior = 'smooth';
+
+        // Enhanced scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Animate various sections on scroll
+        const animatedElements = document.querySelectorAll('.value-card, .team-member, .award-item, .stat-item');
+        animatedElements.forEach((element, index) => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = `all 0.6s ease ${index * 0.1}s`;
+            observer.observe(element);
+        });
+
+        // Counter animation for stats
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            counters.forEach(counter => {
+                const target = parseInt(counter.textContent.replace(/[^\d]/g, ''));
+                const increment = target / 50;
+                let current = 0;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        counter.textContent = counter.textContent.replace(/\d+/, target);
+                        clearInterval(timer);
+                    } else {
+                        counter.textContent = counter.textContent.replace(/\d+/, Math.floor(current));
+                    }
+                }, 50);
+            });
+        }
+
+        // Observe stats section for counter animation
+        const statsSection = document.querySelector('.stats-section');
+        if (statsSection) {
+            const statsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounters();
+                        statsObserver.unobserve(entry.target);
+                    }
+                });
+            });
+            statsObserver.observe(statsSection);
+        }
+
+        // Enhanced image hover effects
+        const images = document.querySelectorAll('.story-image, .team-photo');
+        images.forEach(img => {
+            img.addEventListener('mouseenter', () => {
+                img.style.transform = 'scale(1.05)';
+            });
+            
+            img.addEventListener('mouseleave', () => {
+                img.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zanzibar Islands - Nova Trails</title>
+    <meta name="description" content="Discover the pristine beaches, spice tours, and rich cultural heritage of Zanzibar Islands with Nova Trails">
+    <meta name="author" content="Nova Trails">
+    <link rel="icon" type="image/png" href="images/logo.jpg">  
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Enhanced Image Quality CSS */
+        img {
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+            image-rendering: optimize-quality;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+        }
+
+        /* Enhanced background image quality */
+        .enhanced-bg {
+            background-attachment: scroll;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+            image-rendering: optimize-quality;
+            -webkit-filter: contrast(1.1) saturate(1.2) brightness(1.05);
+            filter: contrast(1.1) saturate(1.2) brightness(1.05);
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+        /* Header Styles */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: transparent;
+            backdrop-filter: blur(0px);
+            border-bottom: 1px solid transparent;
+            transition: all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+
+        .header.scrolled {
+            background: rgba(34, 50, 34, 0.98);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+        }
+
+        /* Logo Styles */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 24px;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .header.scrolled .logo {
+            color: #d4edaa;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo-img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover .logo-img {
+            transform: scale(1.05);
+        }
+
+        /* Navigation Styles */
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            position: relative;
+            padding: 8px 0;
+            transition: all 0.3s ease;
+        }
+
+        .header.scrolled .nav-link {
+            color: #e8f5e9;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, #8bc34a 0%, #5a8f3d 100%);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #a5d6a7;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link.active {
+            color: #a5d6a7;
+        }
+
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        /* CTA Button */
+        .cta-button {
+            background: linear-gradient(135deg, #8bc34a 0%, #5a8f3d 100%);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(139, 195, 74, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 195, 74, 0.4);
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+            padding: 8px;
+        }
+
+        .mobile-toggle span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .header.scrolled .mobile-toggle span {
+            background: #e8f5e9;
+        }
+
+        .mobile-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .mobile-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 0;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 600px;
+            background-image: url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1920&h=1080&fit=crop&crop=center&q=90');
+            background-size: cover;
+            background-position: center;
+            background-attachment: scroll;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            -webkit-filter: contrast(1.15) saturate(1.3) brightness(1.1);
+            filter: contrast(1.15) saturate(1.3) brightness(1.1);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 123, 191, 0.4) 0%, rgba(0, 77, 128, 0.3) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease 0.3s forwards;
+            opacity: 0;
+            text-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            line-height: 1.6;
+            margin-bottom: 32px;
+            animation: fadeInUp 1s ease 0.5s forwards;
+            opacity: 0;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.7s forwards;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(14, 165, 233, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(14, 165, 233, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Sections */
+        .section {
+            padding: 80px 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 16px;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: #64748b;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Overview Section */
+        .overview-section {
+            background: #f8fafc;
+        }
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .overview-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 24px;
+        }
+
+        .overview-text p {
+            font-size: 18px;
+            color: #64748b;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .overview-img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+            -webkit-filter: contrast(1.1) saturate(1.3) brightness(1.05);
+            filter: contrast(1.1) saturate(1.3) brightness(1.05);
+            transition: all 0.3s ease;
+        }
+
+        .overview-img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Experiences Grid */
+        .experiences-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .experience-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .experience-image {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            -webkit-filter: contrast(1.2) saturate(1.4) brightness(1.1);
+            filter: contrast(1.2) saturate(1.4) brightness(1.1);
+        }
+
+        .experience-content {
+            padding: 30px;
+        }
+
+        .experience-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 12px;
+        }
+
+        .experience-description {
+            color: #64748b;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .experience-features {
+            list-style: none;
+            margin-bottom: 24px;
+        }
+
+        .experience-features li {
+            color: #64748b;
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .experience-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #0ea5e9;
+            font-weight: bold;
+        }
+
+        .experience-price {
+            font-size: 20px;
+            font-weight: 600;
+            color: #0ea5e9;
+            margin-bottom: 16px;
+        }
+
+        .btn-experience {
+            background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(14, 165, 233, 0.3);
+        }
+
+        .btn-experience:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(14, 165, 233, 0.4);
+        }
+
+        /* Culture Section */
+        .culture-section {
+            background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+            color: white;
+        }
+
+        .culture-section .section-title {
+            color: white;
+        }
+
+        .culture-section .section-subtitle {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .culture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .culture-item {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .culture-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .culture-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .culture-item h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .culture-item p {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background: linear-gradient(135deg, #1e3a1e 0%, #2d4d2d 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-main {
+            padding: 60px 0 40px;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 40px;
+        }
+
+        .footer-section h3.footer-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #f8fafc;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 24px;
+            font-weight: 700;
+            color: #f8fafc;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo .logo-img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .footer-description {
+            color: #cbd5e1;
+            line-height: 1.6;
+            margin-bottom: 24px;
+            font-size: 15px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-link {
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #cbd5e1;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-decoration: none;
+        }
+
+        .social-link svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .social-link:hover {
+            background: rgba(139, 195, 74, 0.2);
+            color: #8bc34a;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 195, 74, 0.2);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-link {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            position: relative;
+            padding-left: 0;
+        }
+
+        .footer-link::before {
+            content: '';
+            position: absolute;
+            left: -12px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 4px;
+            background: #8bc34a;
+            border-radius: 50%;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: #f8fafc;
+            padding-left: 12px;
+        }
+
+        .footer-link:hover::before {
+            opacity: 1;
+        }
+
+        .footer-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-contact p {
+            color: #cbd5e1;
+            font-size: 15px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 24px 0;
+        }
+
+        .footer-bottom-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .footer-bottom p {
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-bottom-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-bottom-links a:hover {
+            color: #cbd5e1;
+        }
+
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 10000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease-out;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-container {
+            background-color: white;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 90vh;
+            overflow-y: auto;
+            transform: translateY(20px);
+            transition: transform 0.3s ease-out;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal-overlay.active .modal-container {
+            transform: translateY(0);
+        }
+
+        .modal-header {
+            padding: 20px;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin: 0;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #64748b;
+            transition: color 0.2s;
+        }
+
+        .modal-close:hover {
+            color: #334155;
+        }
+
+        .modal-body {
+            padding: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #334155;
+        }
+
+        .form-label.required::after {
+            content: '*';
+            color: #ef4444;
+            margin-left: 4px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #0ea5e9;
+            box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.2);
+        }
+
+        .form-select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2364748b' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            background-size: 16px;
+        }
+
+        .form-textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 20px;
+        }
+
+        .form-col {
+            flex: 1;
+        }
+
+        .btn-submit {
+            background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+            color: white;
+            padding: 14px 24px;
+            border-radius: 8px;
+            border: none;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(14, 165, 233, 0.4);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 0 16px;
+                height: 70px;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: rgba(34, 50, 34, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 20px;
+                gap: 20px;
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-menu.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .mobile-toggle {
+                display: flex;
+            }
+
+            .nav {
+                gap: 20px;
+            }
+
+            .cta-button {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+
+            .logo {
+                font-size: 20px;
+            }
+
+            .logo-img {
+                width: 35px;
+                height: 35px;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 18px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .overview-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .overview-text h2 {
+                font-size: 2rem;
+            }
+
+            .experiences-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .footer-container {
+                padding: 0 16px;
+            }
+
+            .footer-main {
+                padding: 32px 0 24px;
+                gap: 24px;
+            }
+
+            .footer-title {
+                font-size: 16px;
+            }
+
+            .footer-bottom-links {
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-container">
+            <!-- Logo -->
+            <a href="home.html" class="logo">
+                <img src="images/logo.jpg" alt="Nova Trails Logo" class="logo-img">
+                <span>Nova Trails</span>
+            </a>
+
+            <!-- Navigation -->
+            <nav class="nav">
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="home.html" class="nav-link">Home</a></li>
+                    <li><a href="destinations.html" class="nav-link">Destinations</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                
+                <!-- CTA Button -->
+                <button onclick="openBookingModal()" class="cta-button">Book Now</button>
+            </nav>
+
+            <!-- Mobile Menu Toggle -->
+            <div class="mobile-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1 class="hero-title">Zanzibar Islands</h1>
+                <p class="hero-subtitle">Paradise beaches, spice tours, and centuries of Swahili culture await your discovery</p>
+                <div class="hero-buttons">
+                    <button onclick="openBookingModal()" class="btn-primary">Book Your Island Adventure</button>
+                    <a href="contact.html" class="btn-secondary">Get Custom Itinerary</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Overview Section -->
+        <section class="section overview-section">
+            <div class="container">
+                <div class="overview-grid">
+                    <div class="overview-text">
+                        <h2>The Spice Islands</h2>
+                        <p>Zanzibar is an archipelago off the coast of Tanzania, renowned for its pristine white sand beaches, crystal-clear waters, and rich cultural heritage. This tropical paradise has been a crossroads of civilizations for centuries.</p>
+                        <p>From the historic Stone Town with its labyrinthine streets and ancient architecture to the idyllic beaches of Nungwi and Kendwa, Zanzibar offers a perfect blend of culture, history, and natural beauty.</p>
+                        <p>Experience the aromatic spice plantations, dive into vibrant coral reefs, and immerse yourself in the unique Swahili culture that makes Zanzibar truly magical.</p>
+                    </div>
+                    <div class="overview-image">
+                        <img src="images/zanzibar/diving.jpg" alt="Zanzibar Beach" class="overview-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experiences Section -->
+        <section id="experiences" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Zanzibar Experiences</h2>
+                    <p class="section-subtitle">Discover the magic of the Spice Islands through our carefully curated adventures</p>
+                </div>
+                <div class="experiences-grid">
+                    <!-- Beach Paradise -->
+                    <div class="experience-card">
+                        <div class="experience-image" style="background-image: url('images/zanzibar/beachparadise.jpg')"></div>
+                        <div class="experience-content">
+                            <h3 class="experience-title">Beach Paradise Escape</h3>
+                            <p class="experience-description">Relax on pristine white sand beaches with crystal-clear turquoise waters. Perfect for swimming, snorkeling, and sunset watching.</p>
+                            <ul class="experience-features">
+                                <li>Nungwi & Kendwa Beach access</li>
+                                <li>Snorkeling equipment included</li>
+                                <li>Beachfront accommodation</li>
+                                <li>Sunset dhow cruise</li>
+                                <li>Professional photography session</li>
+                            </ul>
+                            <div class="experience-price">From $1,200 per person</div>
+                            <button onclick="openBookingModal()" class="btn-experience">Book This Experience</button>
+                        </div>
+                    </div>
+
+                    <!-- Stone Town Heritage -->
+                    <div class="experience-card">
+                        <div class="experience-image" style="background-image: url('images/zanzibar/stonetown.jpg')"></div>
+                        <div class="experience-content">
+                            <h3 class="experience-title">Stone Town Heritage Tour</h3>
+                            <p class="experience-description">Explore the UNESCO World Heritage site of Stone Town with its rich history, architecture, and vibrant markets.</p>
+                            <ul class="experience-features">
+                                <li>Expert local guide</li>
+                                <li>Historic sites & museums</li>
+                                <li>Spice market visit</li>
+                                <li>Traditional Swahili lunch</li>
+                                <li>Cultural performances</li>
+                            </ul>
+                            <div class="experience-price">From $800 per person</div>
+                            <button onclick="openBookingModal()" class="btn-experience">Book This Experience</button>
+                        </div>
+                    </div>
+
+                    <!-- Spice Tour Adventure -->
+                    <div class="experience-card">
+                        <div class="experience-image" style="background-image: url('images/zanzibar/spiceplantation.jpg')"></div>
+                        <div class="experience-content">
+                            <h3 class="experience-title">Spice Plantation Tour</h3>
+                            <p class="experience-description">Discover why Zanzibar is called the Spice Island. Learn about cultivation and taste fresh spices in their natural habitat.</p>
+                            <ul class="experience-features">
+                                <li>Multiple spice farms visit</li>
+                                <li>Hands-on spice experiences</li>
+                                <li>Traditional spice cooking class</li>
+                                <li>Spice shopping opportunities</li>
+                                <li>Tropical fruit tasting</li>
+                            </ul>
+                            <div class="experience-price">From $600 per person</div>
+                            <button onclick="openBookingModal()" class="btn-experience">Book This Experience</button>
+                        </div>
+                    </div>
+
+                    <!-- Marine Adventures -->
+                    <div class="experience-card">
+                        <div class="experience-image" style="background-image: url('https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=600&h=300&fit=crop&crop=center&q=90')"></div>
+                        <div class="experience-content">
+                            <h3 class="experience-title">Marine Adventures</h3>
+                            <p class="experience-description">Dive into the Indian Ocean's underwater paradise with world-class snorkeling and diving experiences.</p>
+                            <ul class="experience-features">
+                                <li>Mnemba Atoll snorkeling</li>
+                                <li>Dolphin watching tours</li>
+                                <li>Deep sea fishing</li>
+                                <li>PADI diving courses</li>
+                                <li>Marine life photography</li>
+                            </ul>
+                            <div class="experience-price">From $1,000 per person</div>
+                            <button onclick="openBookingModal()" class="btn-experience">Book This Experience</button>
+                        </div>
+                    </div>
+
+                    <!-- Complete Island Experience -->
+                    <div class="experience-card">
+                        <div class="experience-image" style="background-image: url('images/zanzibar/completeisland.jpg')"></div>
+                        <div class="experience-content">
+                            <h3 class="experience-title">Complete Island Experience</h3>
+                            <p class="experience-description">The ultimate Zanzibar adventure combining beaches, culture, spices, and marine activities in one comprehensive package.</p>
+                            <ul class="experience-features">
+                                <li>7-day comprehensive itinerary</li>
+                                <li>All experiences included</li>
+                                <li>Luxury accommodation</li>
+                                <li>Private transportation</li>
+                                <li>Personal concierge service</li>
+                            </ul>
+                            <div class="experience-price">From $2,500 per person</div>
+                            <button onclick="openBookingModal()" class="btn-experience">Book This Experience</button>
+                        </div>
+                    </div>
+
+                    <!-- Romantic Getaway -->
+                    <div class="experience-card">
+                        <div class="experience-image" style="background-image: url('images/zanzibar/romanticgetaway.jpg')"></div>
+                        <div class="experience-content">
+                            <h3 class="experience-title">Romantic Island Getaway</h3>
+                            <p class="experience-description">Perfect for couples seeking romance, with private beach dinners, couples spa treatments, and intimate experiences.</p>
+                            <ul class="experience-features">
+                                <li>Private beach villa</li>
+                                <li>Romantic sunset dinners</li>
+                                <li>Couples spa treatments</li>
+                                <li>Private dhow cruise</li>
+                                <li>Personalized service</li>
+                            </ul>
+                            <div class="experience-price">From $3,200 per couple</div>
+                            <button onclick="openBookingModal()" class="btn-experience">Book This Experience</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Culture & Heritage Section -->
+        <section class="section culture-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Zanzibar Culture & Heritage</h2>
+                    <p class="section-subtitle">Immerse yourself in the rich tapestry of Swahili culture and island traditions</p>
+                </div>
+                <div class="culture-grid">
+                    <div class="culture-item">
+                        <span class="culture-icon">🏛️</span>
+                        <h3>Stone Town Architecture</h3>
+                        <p>Explore the UNESCO World Heritage site with its unique blend of Arab, Persian, Indian, and European architectural influences dating back centuries.</p>
+                    </div>
+                    <div class="culture-item">
+                        <span class="culture-icon">🌶️</span>
+                        <h3>Spice Heritage</h3>
+                        <p>Discover Zanzibar's history as the world's spice capital, with plantations growing cloves, cardamom, cinnamon, and vanilla that shaped global trade.</p>
+                    </div>
+                    <div class="culture-item">
+                        <span class="culture-icon">🎭</span>
+                        <h3>Swahili Culture</h3>
+                        <p>Experience the vibrant Swahili culture through traditional music, dance, art, and storytelling that reflects the island's cosmopolitan heritage.</p>
+                    </div>
+                    <div class="culture-item">
+                        <span class="culture-icon">🍽️</span>
+                        <h3>Culinary Delights</h3>
+                        <p>Savor the unique fusion cuisine that blends African, Arab, Indian, and Portuguese flavors, featuring fresh seafood and aromatic spices.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Main Footer Content -->
+            <div class="footer-main">
+                <!-- Company Info -->
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="images/logo.jpg" alt="Nova Trails Logo" class="logo-img">
+                        <span>Nova Trails</span>
+                    </div>
+                    <p class="footer-description">
+                        We create extraordinary adventures that connect you with the world's most incredible destinations and untouched wilderness experiences.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html" class="footer-link">About Us</a></li>
+                        <li><a href="destinations.html" class="footer-link">Destinations</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact</a></li>
+                        <li><a href="traveltips.html" class="footer-link">Travel Tips</a></li>
+                        <li><a href="blog.html" class="footer-link">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-section">
+                    <h3 class="footer-title">Contact Info</h3>
+                    <div class="footer-contact">
+                        <p>📍 Arusha, Tanzania</p>
+                        <p>📞 +255 744 667 778</p>
+                        <p>✉️ novatrails01@outlook.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 Nova Trails. All rights reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="privacy-policy.html">Privacy Policy</a>
+                        <a href="terms.html">Terms of Service</a>
+                        <a href="cookies.html">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Travel Inquiry Modal -->
+    <div class="modal-overlay" id="inquiryModal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2 class="modal-title">Book Your Zanzibar Adventure</h2>
+                <button class="modal-close" id="modalClose">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="travelInquiryForm">
+                    <div class="form-row">
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="firstName" class="form-label required">First Name</label>
+                                <input type="text" id="firstName" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="lastName" class="form-label required">Last Name</label>
+                                <input type="text" id="lastName" class="form-control" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="email" class="form-label required">Email Address</label>
+                                <input type="email" id="email" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="phone" class="form-label required">Phone Number</label>
+                                <input type="tel" id="phone" class="form-control" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="experience" class="form-label required">Which Zanzibar Experience Interests You?</label>
+                        <select id="experience" class="form-control form-select" required>
+                            <option value="" disabled selected>Select an experience</option>
+                            <option value="Beach Paradise Escape">Beach Paradise Escape</option>
+                            <option value="Stone Town Heritage Tour">Stone Town Heritage Tour</option>
+                            <option value="Spice Plantation Tour">Spice Plantation Tour</option>
+                            <option value="Marine Adventures">Marine Adventures</option>
+                            <option value="Complete Island Experience">Complete Island Experience</option>
+                            <option value="Romantic Island Getaway">Romantic Island Getaway</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="adults" class="form-label required">Number of Adults</label>
+                                <select id="adults" class="form-control form-select" required>
+                                    <option value="" disabled selected>Select</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5+</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="children" class="form-label required">Number of Children</label>
+                                <select id="children" class="form-control form-select" required>
+                                    <option value="" disabled selected>Select</option>
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4+</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="startDate" class="form-label required">Arrival Date</label>
+                                <input type="date" id="startDate" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="endDate" class="form-label required">Departure Date</label>
+                                <input type="date" id="endDate" class="form-control" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="budget" class="form-label required">Your Budget Range (in USD)</label>
+                        <select id="budget" class="form-control form-select" required>
+                            <option value="" disabled selected>Select budget range</option>
+                            <option value="Under $1,000">Under $1,000</option>
+                            <option value="$1,000 - $2,500">$1,000 - $2,500</option>
+                            <option value="$2,500 - $5,000">$2,500 - $5,000</option>
+                            <option value="$5,000 - $10,000">$5,000 - $10,000</option>
+                            <option value="Over $10,000">Over $10,000</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="specialRequests" class="form-label">Special Requests or Preferences</label>
+                        <textarea id="specialRequests" class="form-control form-textarea" placeholder="Any specific dietary requirements, accessibility needs, or special occasions we should know about?"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn-submit">Submit Your Zanzibar Inquiry</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Header scroll effect
+        const header = document.getElementById('header');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileToggle.addEventListener('click', () => {
+            mobileToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Travel Inquiry Modal functionality
+        const modal = document.getElementById('inquiryModal');
+        const modalClose = document.getElementById('modalClose');
+        const travelForm = document.getElementById('travelInquiryForm');
+
+        // Function to open modal (used by Book Now buttons)
+        function openBookingModal() {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close modal
+        modalClose.addEventListener('click', () => {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        // Close when clicking outside modal
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Form submission
+        if (travelForm) {
+            travelForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // Validate required fields
+                const requiredFields = travelForm.querySelectorAll('[required]');
+                let isValid = true;
+                
+                requiredFields.forEach(field => {
+                    if (!field.value) {
+                        field.style.borderColor = '#ef4444';
+                        isValid = false;
+                    } else {
+                        field.style.borderColor = '#cbd5e1';
+                    }
+                });
+                
+                if (isValid) {
+                    alert('Thank you for your Zanzibar inquiry! We will contact you shortly with a customized itinerary.');
+                    modal.classList.remove('active');
+                    document.body.style.overflow = '';
+                    travelForm.reset();
+                } else {
+                    alert('Please fill in all required fields.');
+                }
+            });
+
+            // Reset field styles when user starts typing
+            const inputs = travelForm.querySelectorAll('input, select, textarea');
+            inputs.forEach(input => {
+                input.addEventListener('input', () => {
+                    input.style.borderColor = '#cbd5e1';
+                });
+            });
+
+            // Set minimum date for date inputs to today
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('startDate').min = today;
+            document.getElementById('endDate').min = today;
+
+            // Update end date min when start date changes
+            document.getElementById('startDate').addEventListener('change', function() {
+                document.getElementById('endDate').min = this.value;
+            });
+        }
+
+        // Smooth scroll behavior
+        document.documentElement.style.scrollBehavior = 'smooth';
+
+        // Enhanced experience cards hover effects
+        const experienceCards = document.querySelectorAll('.experience-card');
+        experienceCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                const image = card.querySelector('.experience-image');
+                image.style.transform = 'scale(1.05)';
+                image.style.transition = 'transform 0.6s ease';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                const image = card.querySelector('.experience-image');
+                image.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
